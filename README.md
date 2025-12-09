@@ -26,6 +26,24 @@ Fondo: Establece una imagen de fondo (doodlejumpbg.png) para el Canvas, creando 
 
 El script de JavaScript maneja la inicialización, la física del movimiento, la detección de colisiones y el ciclo principal de actualización del juego.
 
+# Condiciones de Superposición (Colisión AABB)
+
+Estas tablas detallan las cuatro comprobaciones individuales necesarias para confirmar que dos objetos rectangulares (a y b) están superpuestos en un plano 2D. Ambas condiciones de cada eje deben ser `true` para que haya superposición en ese eje.
+
+##  Superposición en el Eje Y (Vertical)
+
+| Condición                                  | Lógica de la Comprobación                               | Significado (Lo que Previene)                                       |
+|--------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------|
+| `a.y < b.y + b.height`                     | El borde superior de `a` no ha superado el borde inferior de `b`. | Previene que `a` esté completamente por debajo de `b`.             |
+| `a.y + a.height > b.y`                     | El borde inferior de `a` no ha quedado detrás del borde superior de `b`. | Previene que `a` esté completamente por encima de `b`.             |
+
+## Superposición en el Eje X (Horizontal)
+
+| Condición                                  | Lógica de la Comprobación                                | Significado (Lo que Previene)                                      |
+|--------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------|
+| `a.x < b.x + b.width`                      | El borde izquierdo de `a` no ha superado el borde derecho de `b`. | Previene que `a` esté completamente a la derecha de `b`.          |
+| `a.x + a.width > b.x`                      | El borde derecho de `a` no ha quedado detrás del borde izquierdo de `b`. | Previene que `a` esté completamente a la izquierda de `b`.       |
+
 
 ## 🛠️ Stack de Tecnologías y Herramientas
 
