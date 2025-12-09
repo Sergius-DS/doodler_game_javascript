@@ -4,43 +4,35 @@
 
 ## 🏗️ Descripción del Proyecto: Juego Doodler en JavaScript
 
-Este proyecto demuestra la incrustación de una aplicación web frontend tradicional (HTML, CSS, JavaScript) dentro de un framework de aplicación de datos de Python (Streamlit). La aplicación funciona como una calculadora simple.
+Este proyecto es una implementación del popular juego Doodle Jump utilizando tecnologías web estándar (HTML5 Canvas, CSS, JavaScript). Sirve como una demostración de desarrollo de juegos 2D basado en la física y el manejo de eventos en el navegador.
 
-### ⚙️ Funcionamiento y Arquitectura
+### ⚙️ Estructura y Funcionamiento
 
-La aplicación sigue el modelo de desarrollo web tradicional, combinando cuatro tecnologías clave:
+El juego se construye alrededor del elemento HTML Canvas, que es el lienzo donde se dibujan todos los gráficos, el Doodler, y las plataformas.
 
-### 1. Estructura (HTML) 🏗️
+### 1. Estructura (index.html) 🖼️
 
-Proporciona el esqueleto de la calculadora:
-* **Contenedor principal:** Un `div` para agrupar y centrar los elementos.
-* **Entradas de usuario:** Dos campos de texto (`<input type="number">`) para los operandos (**firstNumber** y **secondNumber**).
-* **Selector de Operación:** Un menú desplegable (`<select id="operator">`) para elegir la operación (**+, -, *, /**).
-* **Interacción:** Un botón (`<button id="calculate">`) que inicia el proceso.
-* **Salida:** Un párrafo (`<p id="result">`) para mostrar el resultado o mensajes de error.
+HTML5 Canvas: Define el área de juego principal con el ID board.
+
+Conexiones: Enlaza el archivo de estilos (doodlejump.css) y el script principal (doodlejump.js).
 
 ### 2. Estilo (CSS) ✨
 
-El CSS se aplica para una presentación visual **limpia** y **responsive** dentro del entorno Streamlit:
-* **Diseño:** Centrado, bordes redondeados y una sombra sutil.
-* **Consistencia:** Estilo uniforme aplicado a entradas, selector y botón.
-* **Énfasis:** El botón "Calculate" se destaca con un color de fondo verde (`#4CAF50`).
+Alineación: Centra el tablero de juego en la página.
+
+Fondo: Establece una imagen de fondo (doodlejumpbg.png) para el Canvas, creando el ambiente del juego.
 
 ### 3. Lógica (JavaScript) 🧠
 
-El motor funcional que maneja la interacción y realiza los cálculos:
-* **Captura de DOM:** Localiza los elementos HTML por su `ID`.
-* **Función `calculate()`:** Se ejecuta al hacer clic, convierte entradas a números (`parseFloat`), **valida** las entradas (`isNaN`), y usa una sentencia `switch` para aplicar la operación.
-* **Manejo de Excepciones:** Incluye lógica para la **división por cero**.
-* **Manejador de Eventos:** El método `addEventListener('click', calculate)` enlaza el clic del botón a la ejecución de la función.
+El script de JavaScript maneja la inicialización, la física del movimiento, la detección de colisiones y el ciclo principal de actualización del juego.
 
 
 ## 🛠️ Stack de Tecnologías y Herramientas
 
 | Tecnología | Rol en el Proyecto |
 | :--- | :--- |
-| **HTML5** | Estructura los elementos del juego. |
-| **CSS3** | Define el aspecto visual y el diseño. |
-| **JavaScript** | Implementa la lógica de movimiento y la interactividad. |
+| **HTML5** | El lienzo gráfico principal para dibujar los elementos |
+| **CSS3** | Estiliza la página y establece la imagen de fondo.. |
+| **JavaScript** | Implementa la lógica del juego, física, movimiento, colisiones y ciclo de actualización. |
 
 ---
